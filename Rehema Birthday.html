@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Rehema!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, #a0e7f5, #e0faff);
+      color: #034c64;
+      text-align: center;
+    }
+    header {
+      background: url('https://th.bing.com/th/id/R.9a9c03ad9ec52915de81679da7c7ace4?rik=EvASuERWmuFPJg&pid=ImgRaw&r=0') center/cover no-repeat;
+      padding: 60px 20px;
+      color: pink;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    .bio {
+      font-size: 1.2em;
+      margin: 20px;
+    }
+    .countdown {
+      font-size: 2em;
+      margin: 20px;
+    }
+    .photo {
+      margin: 30px;
+    }
+    .guestbook {
+      margin: 40px auto;
+      max-width: 600px;
+    }
+    .guestbook input, .guestbook textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .guestbook button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #00bcd4;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #034c64;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Happy Birthday Rehema!</h1>
+  </header>
+  <div class="countdown" id="countdown">Countdown to birthday loading...</div>
+  <p class="bio">Hi Rehema, I hope your doing good today since its your special day. I wish you happy birthday and live a long and a happy life, may it be filled with joy and prosperity.</p>
+  <div class="photo">
+    <img src="rehema.jpg" alt="Birthday Photo" width="300" />
+  </div>
+    <footer>
+    &copy; 2025 Birthday Celebration for Rehema
+  </footer>
+
+  <script>
+    const countdownEl = document.getElementById('countdown');
+    const birthday = new Date('June 26, 2025 00:00:00');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = birthday - now;
+      if (diff <= 0) {
+        countdownEl.innerHTML = "🎉 It's Rehema's Birthday! 🎉";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s until your birthday!`;
+    }
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
